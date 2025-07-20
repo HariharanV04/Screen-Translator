@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Translator - Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="overlay.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-globe"></i> Screen Translator</h1>
+                <p>Capture, extract, and translate text from any webpage</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3><i class="fas fa-cog"></i> Settings</h3>
+                    
+                    <div class="setting-group">
+                        <label for="targetLang">Target Language:</label>
+                        <select id="targetLang" class="form-control">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            <option value="it">Italian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="ru">Russian</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ar">Arabic</option>
+                            <option value="hi">Hindi</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="captureMode">Capture Mode:</label>
+                        <select id="captureMode" class="form-control">
+                            <option value="manual">Manual Capture</option>
+                            <option value="auto">Auto Capture (5s)</option>
+                            <option value="continuous">Continuous (10s)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="overlayPosition">Overlay Position:</label>
+                        <select id="overlayPosition" class="form-control">
+                            <option value="top-right">Top Right</option>
+                            <option value="top-left">Top Left</option>
+                            <option value="bottom-right">Bottom Right</option>
+                            <option value="bottom-left">Bottom Left</option>
+                            <option value="center">Center</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="autoTranslate" checked>
+                            Auto-translate detected text
+                        </label>
+                    </div>
+
+                    <div class="setting-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="showOriginal" checked>
+                            Show original text
+                        </label>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3><i class="fas fa-play"></i> Controls</h3>
+                    
+                    <div class="button-group">
+                        <button id="captureBtn" class="btn btn-primary">
+                            <i class="fas fa-camera"></i> Capture & Translate
+                        </button>
+                        
+                        <button id="toggleOverlay" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i> Toggle Overlay
+                        </button>
+                        
+                        <button id="clearBtn" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Clear Results
+                        </button>
+                    </div>
+
+                    <div class="status-section">
+                        <div id="statusText" class="status-text">Ready to capture</div>
+                        <div id="progressBar" class="progress-bar hidden">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-history"></i> Translation History</h3>
+                    <button id="clearHistory" class="btn btn-sm btn-outline">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+                
+                <div id="resultsList" class="results-list">
+                    <div class="no-results">
+                        <i class="fas fa-info-circle"></i>
+                        <p>No translations yet. Click "Capture & Translate" to start.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Instructions -->
+        <div class="instructions-panel">
+            <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+            <div class="instructions-content">
+                <div class="instruction-step">
+                    <span class="step-number">1</span>
+                    <p>Navigate to any webpage you want to translate</p>
+                </div>
+                <div class="instruction-step">
+                    <span class="step-number">2</span>
+                    <p>Click "Capture & Translate" or use <kbd>Ctrl+Shift+T</kbd></p>
+                </div>
+                <div class="instruction-step">
+                    <span class="step-number">3</span>
+                    <p>View the translation overlay that appears</p>
+                </div>
+                <div class="instruction-step">
+                    <span class="step-number">4</span>
+                    <p>Use keyboard shortcuts: <kbd>Ctrl+Shift+T</kbd> capture, <kbd>Ctrl+Shift+O</kbd> toggle overlay</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Translation Overlay -->
+    <div id="translation-overlay" class="translation-overlay hidden">
+        <div class="overlay-header">
+            <span class="overlay-title">
+                <i class="fas fa-globe"></i> Translation
+            </span>
+            <button class="overlay-close" id="overlay-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="overlay-content">
+            <div id="translation-text" class="translation-text"></div>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="loading-spinner"></div>
+            <h3>Processing...</h3>
+            <p id="loadingText">Capturing screenshot and extracting text...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
