@@ -1,0 +1,53 @@
+{
+  "name": "screen-translator-web",
+  "version": "1.0.0",
+  "description": "A modern web application that captures screenshots, extracts text using OCR, and displays translations as beautiful overlays",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests configured yet'",
+    "lint": "echo 'No linter configured yet'"
+  },
+  "keywords": [
+    "translation",
+    "ocr",
+    "screenshot",
+    "overlay",
+    "web-app",
+    "tesseract",
+    "html2canvas",
+    "javascript",
+    "multilingual"
+  ],
+  "author": "Screen Translator Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/screen-translator-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/screen-translator-web/issues"
+  },
+  "homepage": "https://github.com/yourusername/screen-translator-web#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "files": [
+    "index.html",
+    "styles.css",
+    "overlay.css",
+    "app.js",
+    "demo.html",
+    "README.md"
+  ]
+}
