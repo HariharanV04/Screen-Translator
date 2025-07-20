@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Translator Demo - Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section h2 {
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .language-example {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s ease;
+        }
+        
+        .language-example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .instructions {
+            background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .instructions h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .test-tips {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .test-tips h4 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .test-tips ul {
+            margin-left: 20px;
+        }
+        
+        .test-tips li {
+            margin-bottom: 5px;
+        }
+        
+        .clickable-text {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .clickable-text:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌐 Screen Translator Demo</h1>
+        <p>Test the web application with multilingual content</p>
+    </div>
+
+    <div class="instructions">
+        <h3>📋 How to Test the Screen Translator</h3>
+        <ol>
+            <li>Open the <strong>Screen Translator web app</strong> in another tab/window</li>
+            <li>Click <span class="highlight">"Capture & Translate"</span> or use <span class="highlight">Ctrl+Shift+T</span></li>
+            <li>Wait for the screenshot and text extraction process</li>
+            <li>View the translation overlay that appears</li>
+            <li>Try different target languages and overlay positions</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>🇪🇸 Spanish Content</h2>
+        <div class="language-example">
+            <div class="language-label">Spanish:</div>
+            <p class="clickable-text">Bienvenido al mundo de la traducción automática. Esta es una demostración del poder de la tecnología moderna para romper las barreras del idioma. La inteligencia artificial ha revolucionado la forma en que nos comunicamos globalmente. Los avances en el procesamiento del lenguaje natural han permitido una comunicación más fluida entre personas de diferentes culturas.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇫🇷 French Content</h2>
+        <div class="language-example">
+            <div class="language-label">French:</div>
+            <p class="clickable-text">Bienvenue dans le monde de la traduction automatique. Ceci est une démonstration de la puissance de la technologie moderne pour briser les barrières linguistiques. L'intelligence artificielle a révolutionné la façon dont nous communiquons globalement. Les progrès dans le traitement du langage naturel ont permis une communication plus fluide entre les personnes de différentes cultures.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇩🇪 German Content</h2>
+        <div class="language-example">
+            <div class="language-label">German:</div>
+            <p class="clickable-text">Willkommen in der Welt der automatischen Übersetzung. Dies ist eine Demonstration der Kraft moderner Technologie, um Sprachbarrieren zu überwinden. Künstliche Intelligenz hat die Art und Weise revolutioniert, wie wir global kommunizieren. Fortschritte in der natürlichen Sprachverarbeitung haben eine flüssigere Kommunikation zwischen Menschen verschiedener Kulturen ermöglicht.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇮🇹 Italian Content</h2>
+        <div class="language-example">
+            <div class="language-label">Italian:</div>
+            <p class="clickable-text">Benvenuto nel mondo della traduzione automatica. Questa è una dimostrazione del potere della tecnologia moderna per abbattere le barriere linguistiche. L'intelligenza artificiale ha rivoluzionato il modo in cui comunichiamo globalmente. I progressi nell'elaborazione del linguaggio naturale hanno permesso una comunicazione più fluida tra persone di culture diverse.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇯🇵 Japanese Content</h2>
+        <div class="language-example">
+            <div class="language-label">Japanese:</div>
+            <p class="clickable-text">自動翻訳の世界へようこそ。これは現代技術の力を示すデモンストレーションで、言語の壁を打ち破るものです。人工知能は、私たちがグローバルにコミュニケーションを取る方法を革命的に変えました。自然言語処理の進歩により、異なる文化の人々間のより滑らかなコミュニケーションが可能になりました。</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇰🇷 Korean Content</h2>
+        <div class="language-example">
+            <div class="language-label">Korean:</div>
+            <p class="clickable-text">자동 번역의 세계에 오신 것을 환영합니다. 이것은 언어 장벽을 허물기 위한 현대 기술의 힘을 보여주는 데모입니다. 인공 지능은 우리가 전 세계적으로 소통하는 방식을 혁신적으로 바꾸었습니다. 자연어 처리의 발전으로 다른 문화권의 사람들 간에 더욱 원활한 소통이 가능해졌습니다.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇨🇳 Chinese Content</h2>
+        <div class="language-example">
+            <div class="language-label">Chinese:</div>
+            <p class="clickable-text">欢迎来到自动翻译的世界。这是现代技术力量的演示，用于打破语言障碍。人工智能彻底改变了我们在全球范围内交流的方式。自然语言处理的进步使得不同文化背景的人们之间能够进行更流畅的交流。</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇷🇺 Russian Content</h2>
+        <div class="language-example">
+            <div class="language-label">Russian:</div>
+            <p class="clickable-text">Добро пожаловать в мир автоматического перевода. Это демонстрация силы современной технологии для преодоления языковых барьеров. Искусственный интеллект революционизировал способ нашего глобального общения. Достижения в обработке естественного языка позволили более плавное общение между людьми разных культур.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇦🇷 Arabic Content</h2>
+        <div class="language-example">
+            <div class="language-label">Arabic:</div>
+            <p class="clickable-text">مرحباً بكم في عالم الترجمة الآلية. هذا عرض توضيحي لقوة التكنولوجيا الحديثة لكسر حواجز اللغة. لقد أحدث الذكاء الاصطناعي ثورة في الطريقة التي نتواصل بها عالمياً. سمحت التطورات في معالجة اللغة الطبيعية بتواصل أكثر سلاسة بين الأشخاص من ثقافات مختلفة.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🇮🇳 Hindi Content</h2>
+        <div class="language-example">
+            <div class="language-label">Hindi:</div>
+            <p class="clickable-text">स्वचालित अनुवाद की दुनिया में आपका स्वागत है। यह आधुनिक तकनीक की शक्ति का प्रदर्शन है जो भाषा की बाधाओं को तोड़ने के लिए है। कृत्रिम बुद्धिमत्ता ने हमारे वैश्विक संचार के तरीके में क्रांति ला दी है। प्राकृतिक भाषा प्रसंस्करण में प्रगति ने विभिन्न संस्कृतियों के लोगों के बीच अधिक सहज संचार को संभव बनाया है।</p>
+        </div>
+    </div>
+
+    <div class="test-tips">
+        <h4>🎯 Testing Tips</h4>
+        <ul>
+            <li>Try different <span class="highlight">target languages</span> in the app settings</li>
+            <li>Test <span class="highlight">overlay positions</span> (top-right, center, etc.)</li>
+            <li>Use <span class="highlight">auto-capture mode</span> for continuous translation</li>
+            <li>Check the <span class="highlight">translation history</span> in the app</li>
+            <li>Test with <span class="highlight">different text sizes</span> and fonts</li>
+            <li>Try <span class="highlight">mixed language content</span> for OCR testing</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Technical Information</h2>
+        <div class="language-example">
+            <div class="language-label">About this Demo:</div>
+            <p>This demo page contains text in multiple languages to test the OCR and translation capabilities of the Screen Translator web application. The text is designed to be easily readable by OCR systems and includes various character sets and writing systems.</p>
+            <p><strong>Supported Languages:</strong> English, Spanish, French, German, Italian, Portuguese, Russian, Japanese, Korean, Chinese, Arabic, Hindi, and many more.</p>
+            <p><strong>OCR Engine:</strong> Tesseract.js with multi-language support</p>
+            <p><strong>Translation APIs:</strong> Google Translate (primary) and MyMemory (fallback)</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>🌐 Screen Translator Demo - Test your translation capabilities!</p>
+        <p><small>Click on any text to select it, then use the Screen Translator app to capture and translate.</small></p>
+    </div>
+
+    <script>
+        // Add interactive elements for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to test text selection
+            const clickableTexts = document.querySelectorAll('.clickable-text');
+            clickableTexts.forEach(text => {
+                text.addEventListener('click', function() {
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    range.selectNodeContents(this);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    
+                    // Show a brief notification
+                    const notification = document.createElement('div');
+                    notification.textContent = 'Text selected! Now use the Screen Translator app.';
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: #667eea;
+                        color: white;
+                        padding: 10px 15px;
+                        border-radius: 5px;
+                        z-index: 1000;
+                        font-size: 14px;
+                    `;
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                });
+            });
+            
+            // Add keyboard shortcut hint
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+                    const notification = document.createElement('div');
+                    notification.textContent = 'Keyboard shortcut detected! Make sure the Screen Translator app is open.';
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: #28a745;
+                        color: white;
+                        padding: 10px 15px;
+                        border-radius: 5px;
+                        z-index: 1000;
+                        font-size: 14px;
+                    `;
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
